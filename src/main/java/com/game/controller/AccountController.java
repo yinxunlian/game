@@ -20,7 +20,7 @@ import java.util.Date;
  * </p>
  *
  * @author yinhang
- * @since 2018-12-25 11:00
+ * @since 2018-12-25
  */
 @RestController
 @RequestMapping("account")
