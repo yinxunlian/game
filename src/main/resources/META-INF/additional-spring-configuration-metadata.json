@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "xxl.job.executor.logpath",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.executor.logpath'"
+  },
+  {
+    "name": "xxl.job.executor.appname",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.executor.appname'"
+  },
+  {
+    "name": "xxl.job.executor.port",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.executor.port'"
+  },
+  {
+    "name": "xxl.job.executor.logretentiondays",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.executor.logretentiondays'"
+  },
+  {
+    "name": "xxl.job.executor.ip",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.executor.ip'"
+  },
+  {
+    "name": "xxl.job.admin.addresses",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.admin.addresses'"
+  },
+  {
+    "name": "xxl.job.access-token",
+    "type": "java.lang.String",
+    "description": "A description for 'xxl.job.access-token'"
+  },
+  {
+    "name": "game.environment",
+    "type": "java.lang.String",
+    "description": "A description for 'game.environment'"
+  }
+]}

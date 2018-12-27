@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.game.mapper.UploadFileMapper">
+
+	<!-- 文件map -->
+	<resultMap id="BaseResultMap" type="com.game.entity.UploadFile">
+		<id column="file_id" property="fileId" />
+		<result column="file_name" property="fileName" />
+		<result column="access_url" property="accessUrl" />
+		<result column="create_uid" property="createUid" />
+		<result column="create_time" property="createTime" />
+		<result column="update_uid" property="updateUid" />
+		<result column="update_time" property="updateTime" />
+		<result column="deleted" property="deleted" />
+	</resultMap>
+
+	<!-- 添加文件记录 -->
+	<insert id="insertSelective" useGeneratedKeys="true"
+		keyProperty="fileId" parameterType="com.game.entity.UploadFile">
+		insert into t_upload_file
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="fileName != null">
+				file_name,
+			</if>
+			<if test="accessUrl != null">
+				access_url,
+			</if>
+			<if test="createUid != null">
+				create_uid,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateUid != null">
+				update_uid,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+			<if test="deleted != null">
+				deleted,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="fileName != null">
+				#{fileName},
+			</if>
+			<if test="accessUrl != null">
+				#{accessUrl},
+			</if>
+			<if test="createUid != null">
+				#{createUid},
+			</if>
+			<if test="createTime != null">
+				now(),
+			</if>
+			<if test="updateUid != null">
+				#{updateUid},
+			</if>
+			<if test="updateTime != null">
+				now(),
+			</if>
+			<if test="deleted != null">
+				#{deleted},
+			</if>
+		</trim>
+	</insert>
+
+</mapper>

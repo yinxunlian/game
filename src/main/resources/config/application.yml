@@ -1,0 +1,65 @@
+# server配置
+server:
+  port: 8080
+  servlet:
+    context-path: /game
+
+# spring配置
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.101.195.84:3306/game?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
+    username: root
+    password: FjDbPass@@2018
+    hikari:
+      # 连接池中允许的最大连接数，缺省值10
+      maximum-pool-size: 50
+      minimum-idle: 8
+
+  # redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: FjRedisPass@@2018
+    jedis:
+      pool:
+        max-idle: 300
+        max-active: 600
+        max-wait: 1s
+    timeout: 20s
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.game.entity
+  typeEnumsPackage: com.game.entity.enums
+  global-config:
+    # 数据库相关配置
+    db-config:
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    #刷新mapper 调试神器
+    refresh: true
+  # 原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+# 日志配置
+logging:
+  config: classpath:config/logback.xml
+
+# game config
+game:
+  resource:
+    upload-path: /mnt/upload
+    access-uri: http://oss.game.vip/upload
+
